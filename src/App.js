@@ -11,7 +11,7 @@ export function App({side}) {
     {name:"Albus Dumbledore", side:"light"},
     {name:"Malfoy", side:"dark"},
     {name:"Voldemort", side:"dark"},
-    // {name:"Bellatrix Lestrange", side:"dark"},
+    {name:"Bellatrix Lestrange", side:"dark"},
   ]
 
   const filteredChars = characters.filter(char => char.side === side)

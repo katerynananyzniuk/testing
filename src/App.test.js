@@ -8,14 +8,17 @@ configure({
 })
 
 describe('<App/>', () => {
-  it('should render 3 char on light side', () => {
-    const wrapper = shallow(<App />)
 
+  let wrapper = shallow(<App />)
+
+  beforeEach(() => {
+    wrapper = shallow(<App />)
+  })
+  it('should render 3 char on light side', () => {
     expect(wrapper.find(Character)).toHaveLength(3)
   })
   it('should render 3 char on dark side', () => {
-    const wrapper = shallow(<App side={'dark'}/>)
-
-    expect(wrapper.find(Character)).toHaveLength(2)
+    wrapper.setProps({side: 'dark'})
+    expect(wrapper.find(Character)).toHaveLength(3)
   })
 })
